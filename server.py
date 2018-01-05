@@ -10,16 +10,19 @@ import signal
 
 os.system("clear")
 print """
-	  ___  ___ __ _________  ___ 
-	 / _ \/ -_) // / __/ _ \/ _ \ 
-	/_//_/\__/\_,_/_/  \___/_//_/
-	server v 1.2 | susmithHCK                  
+    ____             __   __  __                __
+   / __ )____ ______/ /__/ / / /___ _____  ____/ /
+  / __  / __ `/ ___/ //_/ /_/ / __ `/ __ \/ __  / 
+ / /_/ / /_/ / /__/ ,< / __  / /_/ / / / / /_/ /  
+/_____/\__,_/\___/_/|_/_/ /_/\__,_/_/ /_/\__,_/   
+                                                  
+	server v 1.0 | Grant Schwartz                  
 
 """
 
 def sigint_handler(signum, frame):
     print '\n user interrupt ! shutting down'
-    print "[info] shutting down NEURON \n\n"
+    print "[info] shutting down BackHand \n\n"
     sys.exit()	
     
 signal.signal(signal.SIGINT, sigint_handler)
@@ -51,7 +54,7 @@ def decrypt(secret,data):
 	return decoded
 
 config = ConfigParser.RawConfigParser()   
-config.read(r'neuron.conf')
+config.read(r'backhand.conf')
 
 HOST = config.get('config', 'HOST')
 PORT = int(config.get('config', 'PORT'))
@@ -71,7 +74,7 @@ def chat_server():
 
     SOCKET_LIST.append(server_socket)
 
-    print "neuron server started on port " + str(PORT)
+    print "BackHand server started on port " + str(PORT)
 
     while 1:
 
