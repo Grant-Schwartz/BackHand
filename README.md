@@ -20,6 +20,6 @@ SERVER.PY USAGE
 
 NEURON.PY USAGE
 
- $ python neuron.py "host_ip" "port" "password" "nick_name"
+ $ python backhand.py "host_ip" "port" "password" "nick_name"
 
 ##########################################
